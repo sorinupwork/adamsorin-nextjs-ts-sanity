@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
 type Props = {};
 
@@ -29,10 +30,12 @@ export default function ExperienceCard({}: Props) {
         <h4 className="text-4-xl font-light">CEO of MADAM</h4>
         <p className="font-bold text-2xl mt-1">MADAM</p>
         <div className="flex space-x-2 my-2">
-          <img
+          <Image
             src="https://i.ibb.co/L1nwhq1/Java-Script-Logo2.png"
             alt="javascript logo"
-            className="h-10 w-10 rounded-full"
+            width={40}
+            height={40}
+            className="rounded-full"
           />
         </div>
         <p>Started work... - Ended...</p>
@@ -40,7 +43,8 @@ export default function ExperienceCard({}: Props) {
         <ul className="list-disc space-y-4 ml-5 text-lg">
           <li>
             Summary pointsSummary pointsSummary pointsSummary pointsSummary
-            pointsSummary points
+            pointsSummary pointsSummary pointsSummary pointsSummary
+            pointsSummary pointsSummary pointsSummary points
           </li>
           <li>
             Summary pointsSummary pointsSummary pointsSummary pointsSummary
