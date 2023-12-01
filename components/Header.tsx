@@ -24,17 +24,20 @@ export default function Header({}: Props) {
       >
         {/* Social Icons */}
         <SocialIcon
-          url="https://twitter.com"
+          url="https://www.linkedin.com/in/sorin-adam-09650216b/"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://twitter.com"
+          url="https://github.com/sorinupwork"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
         />
         <SocialIcon
-          url="https://twitter.com"
+          url="https://twitter.com/Sorin070394"
+          target="_blank"
           fgColor="gray"
           bgColor="transparent"
         />

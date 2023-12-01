@@ -11,7 +11,7 @@ export default function Hero({}: Props) {
     words: [
       "Hi, The Name's Sorin Adam",
       'Guy-who-loves-Coffee.tsx',
-      '<ButLovesToCodeMore />',
+      '<But-Loves-To-Code-More />',
     ],
     loop: true,
     delaySpeed: 2000,

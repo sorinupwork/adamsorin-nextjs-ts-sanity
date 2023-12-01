@@ -35,8 +35,8 @@ export default function About({}: Props) {
         viewport={{
           once: true,
         }}
-        src="https://i.ibb.co/pKkqvYG/wp6359333.webp"
-        className="mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[550px] xl:h-[600px]"
+        src="https://i.ibb.co/D9Q2HVq/IMG-0595.png"
+        className="mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[550px] xl:h-[600px] mt-36"
       />
 
       <div className="space-y-10 px-0 md:px-10">
