@@ -25,11 +25,16 @@ export default function Skills({ skills }: Props) {
 
       <div className="grid grid-cols-4 gap-5">
         {skills?.slice(0, skills.length / 2 - 2).map((skill) => (
-          <Skill key={skill._id} skill={skill} />
+          <Skill key={skill._id} skill={skill} skillRate={skill.progress} />
         ))}
 
         {skills?.slice(skills.length / 2, skills.length).map((skill) => (
-          <Skill key={skill._id} skill={skill} directionLeft />
+          <Skill
+            key={skill._id}
+            skill={skill}
+            skillRate={skill.progress}
+            directionLeft
+          />
         ))}
       </div>
     </motion.div>
