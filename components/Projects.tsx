@@ -1,10 +1,14 @@
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 
-type Props = {};
+import { Project } from '@/typings';
+import { urlFor } from '@/sanity';
 
-export default function Projects({}: Props) {
-  const projects = [1, 2, 3, 4, 5];
+type Props = {
+  projects: Project[];
+};
 
+export default function Projects({ projects }: Props) {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -17,7 +21,7 @@ export default function Projects({}: Props) {
       </h3>
 
       <div className="relative w-full flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80">
-        {projects.map((project, i) => (
+        {projects?.map((project, i) => (
           <div
             key={i}
             className="w-screen flex-shrink-0 snap-center flex flex-col space-y-5 items-center justify-center p-20 md:p-44 h-screen"
@@ -37,7 +41,7 @@ export default function Projects({}: Props) {
               viewport={{
                 once: true,
               }}
-              src="https://i.ibb.co/SN1jYxv/live-chat.png"
+              src={urlFor(project?.image).url()}
               alt="signal logo"
             />
             <div className="space-y-10 px-0 md:px-10 max-w-6xl">
@@ -45,15 +49,23 @@ export default function Projects({}: Props) {
                 <span className="underline decoration-[#F7AB0A]/50">
                   Case Study {i + 1} of {projects.length}:
                 </span>{' '}
-                Signal Clone
+                {project?.title}
               </h4>
 
+              <div className="flex items-center space-x-2 justify-center">
+                {project?.technologies.map((technology) => (
+                  <Image
+                    key={technology._id}
+                    width={40}
+                    height={40}
+                    src={urlFor(technology.image).url()}
+                    alt="tech"
+                  />
+                ))}
+              </div>
+
               <p className="text-lg text-center md:text-left">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Consequatur, cum molestias, possimus vel fugiat veniam at
-                ducimus expedita quia, distinctio adipisci necessitatibus
-                temporibus exercitationem recusandae deleniti velit assumenda
-                dignissimos! Quibusdam.
+                {project?.summary}
               </p>
             </div>
           </div>

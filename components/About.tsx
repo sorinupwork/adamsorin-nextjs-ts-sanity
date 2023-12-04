@@ -1,8 +1,13 @@
 import { motion } from 'framer-motion';
 
-type Props = {};
+import { PageInfo } from '@/typings';
+import { urlFor } from '@/sanity';
 
-export default function About({}: Props) {
+type Props = {
+  pageInfo: PageInfo;
+};
+
+export default function About({ pageInfo }: Props) {
   return (
     <motion.div
       initial={{
@@ -35,7 +40,7 @@ export default function About({}: Props) {
         viewport={{
           once: true,
         }}
-        src="https://i.ibb.co/D9Q2HVq/IMG-0595.png"
+        src={urlFor(pageInfo?.profilePic).url()}
         className="mb-0 flex-shrink-0 w-56 h-56 rounded-full object-cover md:rounded-lg md:w-64 md:h-95 xl:w-[550px] xl:h-[600px] mt-36"
       />
 
@@ -45,17 +50,7 @@ export default function About({}: Props) {
           <span className="underline decoration-[#F7AB0A]/50">little</span>{' '}
           background
         </h4>
-        <p className="text-base">
-          Dedicated and highly motivated with a passion for problem-solving and
-          a solid foundation in software development. Highly proficient in
-          full-stack engineering, system organization, application development,
-          code writing, and distributed systems. As a Full Stack developer
-          I&apos;ve worked both with startups and large corporations to help
-          build & scale their companies. Also I am hardworking, fast-learner,
-          organised and trustworthy. Seeking an opportunity to contribute my
-          technical skills and enthusiasm to a dynamic software development
-          team.
-        </p>
+        <p className="text-base">{pageInfo?.backgroundInformation}</p>
       </div>
     </motion.div>
   );
